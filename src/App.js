@@ -47,7 +47,7 @@ class App extends Component {
           <h5>Answer: </h5>
         </div>
 
-        <button onClick={this.handleSubmit} type="submit">What is...?</button>
+        <button onClick={this.handleSubmit} type="submit">New Question?</button>
       </div> /* closes container */
     );
   }

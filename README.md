@@ -2,5 +2,5 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This project uses [jService] (http://jservice.io/).
+This project uses [jService](http://jservice.io/).
 ---
