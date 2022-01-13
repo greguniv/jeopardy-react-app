@@ -1,5 +1,6 @@
 * {
-    background-color: lavender;
+    background-color: #54cdfd;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 #container {
@@ -10,5 +11,5 @@
 }
 
 #answer {
-    border: 2px solid black;
+    border: 1px solid black;
 }
