@@ -11,5 +11,13 @@
 }
 
 #answer {
+    background-color: white;
     border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h5 {
+    background-color: white;
 }
