@@ -3,6 +3,18 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
+h2 {
+    text-transform: uppercase;
+}
+
+h5 {
+    background-color: white;
+}
+
+/* light pink: f6aab7  */
+
+/* -------------------------- DIV CSS ------------------ */
+
 #container {
     display: flex;
     flex-direction: column;
@@ -18,6 +30,6 @@
     align-items: center;
 }
 
-h5 {
-    background-color: white;
+#question {
+    display: none;
 }

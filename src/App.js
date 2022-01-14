@@ -49,8 +49,7 @@ class App extends Component {
 
   render() {
     // console.log('we out here')
-    console.log(this.state.setQuestion)
-    console.log(this.state.setQuestion)
+    // console.log(this.state.setQuestion)
 
     const { category, answer, question, value } = this.state.setQuestion
 
@@ -59,15 +58,17 @@ class App extends Component {
       <div id="container">
         <div>
           <h1>Welcome to Trivia!</h1>
-          {/* <h2>Score: </h2> */}
-          {/* <h3>Category: {category.id}</h3> */}
-          <h3>Question: {question}</h3>
+
+          <h2>Score: </h2>
+          <h2>Category: {category?.title}</h2>
           <h4>Points: {value}</h4>
-
-
           <div id="answer">
             <h5>Answer: {answer}</h5>
           </div>
+
+          <div id="question-box">
+            <h3>What is...?: {question}</h3>
+            </div>
         </div>
       </div>  /* closes container */
     )
