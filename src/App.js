@@ -3,12 +3,6 @@ import React, { Component } from 'react';
 import './App.css';
 
 //Components
-let element = document.getElementsByClassName("hide");
-function toggle() {
-  element.className.toggle("hide")
-}
-
-
 
 class App extends Component {
 
@@ -19,6 +13,21 @@ class App extends Component {
     category: '',
     setQuestion: '',
     toggle: false,
+    score: 0,
+  }
+
+  handleIncrement = e => {
+    // console.log('Increment Clicked')
+    this.setState({score: this.state.score += this.state.setQuestion.value})
+  }
+
+  handleDecrement = e => {
+    // console.log('Decrement Clicked')
+    this.setState({score: this.state.score -= this.state.setQuestion.value})
+  }
+
+  handleReset = e => {
+    this.setState({score: this.state.score = 0})
   }
 
   handleChange = (e) => {
@@ -53,8 +62,6 @@ class App extends Component {
   }
 
   render() {
-    // console.log('we out here')
-    // console.log(this.state.setQuestion)
 
     const { category, answer, question, value } = this.state.setQuestion
 
@@ -64,13 +71,13 @@ class App extends Component {
         <div>
           <h1>Welcome to Trivia!</h1>
 
-            <h2>Score: </h2>
+          <h2>Score: {this.state.score} </h2>
           <div className="score-button">
-            <button id="increase">Increase</button>
+            <button id="increase" onClick={this.handleIncrement}>Increase</button>
 
-            <button id="decrease">Decrease</button>
+            <button id="decrease" onClick={this.handleDecrement}>Decrease</button>
 
-            <button id="reset">Reset</button>
+            <button id="reset" onClick={this.handleReset}>Reset</button>
 
           </div>
           <h2>Category: <br />
@@ -82,19 +89,19 @@ class App extends Component {
             <h5>Question:</h5>
             {question}
           </div>
-            
-          <div id="question-box" onClick={() => this.setState({toggle: !this.state.toggle})}>
+
+          <div id="question-box" onClick={() => this.setState({ toggle: !"hide" })}>
             Click Here to Reveal the Answer:
 
-              <div className="hide" > 
-                {answer}
-                {console.log({answer})}
-              </div>
+            <div>
+              { answer}
+              {console.log({ answer })}
+            </div>
           </div>
 
-                <div id="next-question">
-              <button onClick={this.handleSubmit}>Click Here for the Next Question</button>
-              </div>
+          <div id="next-question">
+            <button onClick={this.handleSubmit}>Click Here for the Next Question</button>
+          </div>
 
         </div>
       </div>  /* closes container */
