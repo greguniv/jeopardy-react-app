@@ -3,19 +3,43 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
+h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 h2 {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-transform: uppercase;
+}
+
+h3 {
+    background-color: #f6aab7;
+}
+
+h4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h5 {
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
 }
 
-/* light pink: f6aab7  */
 
 /* -------------------------- DIV CSS ------------------ */
 
 #container {
+    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,13 +47,40 @@ h5 {
 }
 
 #answer {
+    border: 1px solid black;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
+
+#question-box {
+    background-color: #f6aab7;
     border: 1px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#question {
-    display: none;
+#points-box {
+    background-color: white;
+    border: 1px solid black;
+}
+
+.score-button {
+    /* background-color: #f6aab7; */
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+#next-question {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
 }
