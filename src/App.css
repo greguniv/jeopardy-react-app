@@ -72,6 +72,12 @@ h5 {
     border: 1px solid black;
 }
 
+.cat-points {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+}
+
 .score-button {
     /* background-color: #f6aab7; */
     display: flex;
@@ -80,7 +86,7 @@ h5 {
 }
 
 #next-question {
+    border-radius: 25%;
     display: flex;
-    /* align-items: center; */
     justify-content: center;
 }

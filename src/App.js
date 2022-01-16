@@ -12,7 +12,7 @@ class App extends Component {
     answer: '',
     category: '',
     setQuestion: '',
-    toggle: false,
+    toggle: true,
     score: 0,
   }
 
@@ -30,13 +30,16 @@ class App extends Component {
     this.setState({score: this.state.score = 0})
   }
 
+  handleReveal = e => {
+    const isRevealed = this.state.toggle
+    this.setState({toggle: !isRevealed})
+  }
+
   handleChange = (e) => {
     this.setState({
       [e.target.id]: e.target.value
     })
   }
-
-
 
   componentDidMount() {
     fetch(this.state.baseURL)
@@ -80,27 +83,28 @@ class App extends Component {
             <button id="reset" onClick={this.handleReset}>Reset</button>
 
           </div>
+          <div className="cat-points">
           <h2>Category: <br />
             {category?.title}</h2>
 
           <h4 id="points-box">Points: {value}</h4>
+          </div>
 
           <div id="answer">
             <h5>Question:</h5>
             {question}
           </div>
 
-          <div id="question-box" onClick={() => this.setState({ toggle: !"hide" })}>
+          <div id="question-box" onClick={this.handleReveal}>
             Click Here to Reveal the Answer:
 
             <div>
-              { answer}
-              {console.log({ answer })}
+              <h4 className={this.state.toggle ? "hide" : null}>{answer}</h4>
             </div>
           </div>
 
           <div id="next-question">
-            <button onClick={this.handleSubmit}>Click Here for the Next Question</button>
+            <button id="next-question" onClick={this.handleSubmit}>Click Here for the Next Question</button>
           </div>
 
         </div>
