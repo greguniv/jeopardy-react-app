@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 // CSS
 import './App.css';
 
-//Components
 
 class App extends Component {
 
@@ -18,21 +17,21 @@ class App extends Component {
 
   handleIncrement = e => {
     // console.log('Increment Clicked')
-    this.setState({score: this.state.score += this.state.setQuestion.value})
+    this.setState({ score: this.state.score += this.state.setQuestion.value })
   }
 
   handleDecrement = e => {
     // console.log('Decrement Clicked')
-    this.setState({score: this.state.score -= this.state.setQuestion.value})
+    this.setState({ score: this.state.score -= this.state.setQuestion.value })
   }
 
   handleReset = e => {
-    this.setState({score: this.state.score = 0})
+    this.setState({ score: this.state.score = 0 })
   }
 
   handleReveal = e => {
     const isRevealed = this.state.toggle
-    this.setState({toggle: !isRevealed})
+    this.setState({ toggle: !isRevealed })
   }
 
   handleChange = (e) => {
@@ -71,43 +70,39 @@ class App extends Component {
     return (
       // console.log('hello'),
       <div id="container">
-        <div>
-          <h1>Welcome to Trivia!</h1>
+        <h1>Welcome to Trivia!</h1>
 
-          <h2>Score: {this.state.score} </h2>
-          <div className="score-button">
-            <button id="increase" onClick={this.handleIncrement}>Increase</button>
+        <h2>Score: {this.state.score} </h2> 
 
-            <button id="decrease" onClick={this.handleDecrement}>Decrease</button>
+        <div className="score-button">
+          <button id="increase" onClick={this.handleIncrement}>Increase</button>
 
-            <button id="reset" onClick={this.handleReset}>Reset</button>
+          <button id="decrease" onClick={this.handleDecrement}>Decrease</button>
 
-          </div>
-          <div className="cat-points">
+          <button id="reset" onClick={this.handleReset}>Reset</button>
+        </div>
+
+        <div className="cat-points">
           <h2>Category: <br />
             {category?.title}</h2>
-
-          <h4 id="points-box">Points: {value}</h4>
-          </div>
-
-          <div id="answer">
-            <h5>Question:</h5>
-            {question}
-          </div>
-
-          <div id="question-box" onClick={this.handleReveal}>
-            Click Here to Reveal the Answer:
-
-            <div>
-              <h4 className={this.state.toggle ? "hide" : null}>{answer}</h4>
-            </div>
-          </div>
-
-          <div id="next-question">
-            <button id="next-question" onClick={this.handleSubmit}>Click Here for the Next Question</button>
-          </div>
-
+          <h2 id="points-box">
+            Points: {value}</h2>
         </div>
+
+        <div id="answer">
+          <h2>Question: <br />
+            {question} </h2>
+        </div>
+
+        <div id="question-box" onClick={this.handleReveal}>
+          Click Here to Reveal the Answer:
+            <h3 className={this.state.toggle ? "hide" : null}>{answer}</h3>
+        </div>
+
+        <div id="next-question">
+          <button id="next-question" onClick={this.handleSubmit}>Click Here for the Next Question</button>
+        </div>
+
       </div>  /* closes container */
     )
   }
